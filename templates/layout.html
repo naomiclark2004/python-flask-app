@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>{% block title%}{%endblock%}</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{{url_for('madlib')}}">Mad Lib</a></li>
+        <a href="{{url_for('scramble')}}">Scramble</a></li>
+        <a href="{{url_for('about')}}">About</a></li>
+    </nav>
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+    <footer>
+        <h1 style="text-align: center;">Resources:</h1>
+        <div class="resources">
+            <ul>
+                <li><a href="https://www.madtakes.com/libs/037.html">https://www.madtakes.com/libs/037.html for
+                        Shakespeare's
+                        Romeo and Juliet madlib
+                        madlib
+                    </a></li>
+                <li><a href="https://www.geeksforgeeks.org/python-scramble-words-from-a-text-file/">https://www.geeksforgeeks.org/python-scramble-words-from-a-text-file/
+                        for the scramble code.</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

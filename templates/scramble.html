@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title%}Word Scramble App{%endblock%}
+
+{% block content %}
+<section>
+    <div class="wrapper">
+        <h1 style="text-align: center;">This is a word scramble app.</h1>
+        <div>
+            <form action="{{url_for('scramble')}}" method="POST">
+                <textarea name="words" cols="50" rows="5" placeholder="{{words}}"></textarea>
+                <input type="submit" value="Scramble!">
+            </form>
+
+            <p>{{scrambled}}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
