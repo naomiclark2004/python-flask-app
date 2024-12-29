@@ -40,9 +40,11 @@ def scramble():
                     word1.insert(0, word[0])
                     word1.append(word[-1])
                     new_word = new_word + "".join(word1) + " "
+            elif len(word) == 2:
+                word1 = word[1] + word[0]
+                new_word = new_word + word1 + " "
             else:
                 new_word = new_word + word + " "
-
         return render_template("scramble.html", scrambled=new_word, words=input)
     return render_template("scramble.html")
 
