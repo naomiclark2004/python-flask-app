@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from random import shuffle
+from random import sample
 
 app = Flask("__name__")
 
@@ -24,12 +24,21 @@ def scramble():
         new_word = " "
         input = request.form.get("words")
         words = input.split()
-        # punct = (".", ";", "!", "?", ",")
         for word in words:
             if len(word) > 3:
-                word = list(word)
-                shuffle(word)
-                new_word = new_word + "".join(word) + " "
+                if word.endswith(punct):
+                    word1 = word[1:-2]
+                    word1 = sample(word1, len(word1))
+                    word1.insert(0, word[0])
+                    word1.append(word[-2])
+                    word1.append(word[-1])
+                    new_word = new_word + "".join(word1) + " "
+                else:
+                    word1 = word[1:-1]
+                    word1 = sample(word1, len(word1))
+                    word1.insert(0, word[0])
+                    word1.append(word[-1])
+                    new_word = new_word + "".join(word1) + " "
             else:
                 new_word = new_word + word + " "
 
