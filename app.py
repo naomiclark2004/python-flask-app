@@ -26,7 +26,6 @@ def scramble():
         punct = (".", ";", "!", "?", ",")
         words = input.split()
         for word in words:
-            print(len(word))
             if len(word) >= 3:
                 # shuffle everything but punctionation
                 if word.endswith(punct):
