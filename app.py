@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from random import sample
 
-app = Flask("__name__")
+app = Flask(__name__)
 
 
 @app.route("/")
@@ -23,6 +23,7 @@ def scramble():
     if request.method == "POST":
         new_word = " "
         input = request.form.get("words")
+        punct = (".", ";", "!", "?", ",")
         words = input.split()
         for word in words:
             if len(word) > 3:
