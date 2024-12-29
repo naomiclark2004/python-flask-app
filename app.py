@@ -26,24 +26,23 @@ def scramble():
         punct = (".", ";", "!", "?", ",")
         words = input.split()
         for word in words:
-            if len(word) > 3:
+            print(len(word))
+            if len(word) >= 3:
+                # shuffle everything but punctionation
                 if word.endswith(punct):
-                    word1 = word[1:-2]
+                    word1 = word[:-1]
                     word1 = sample(word1, len(word1))
-                    word1.insert(0, word[0])
-                    word1.append(word[-2])
                     word1.append(word[-1])
                     new_word = new_word + "".join(word1) + " "
                 else:
-                    word1 = word[1:-1]
-                    word1 = sample(word1, len(word1))
-                    word1.insert(0, word[0])
-                    word1.append(word[-1])
+                    word1 = sample(word, len(word))
                     new_word = new_word + "".join(word1) + " "
             elif len(word) == 2:
+                # switch first and last
                 word1 = word[1] + word[0]
                 new_word = new_word + word1 + " "
             else:
+                # just print letter
                 new_word = new_word + word + " "
         return render_template("scramble.html", scrambled=new_word, words=input)
     return render_template("scramble.html")
