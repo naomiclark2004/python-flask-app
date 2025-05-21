@@ -30,7 +30,6 @@ nav a:hover {
   width: 90%;
   margin: 45px auto;
   justify-content: space-around;
-  /* margin-bottom: 20px; */
 }
 
 .content form {
@@ -39,7 +38,6 @@ nav a:hover {
   width: 500px;
   text-align: end;
   column-gap: 10px;
-  /* margin: 0 auto; */
 }
 
 .wrapper {
@@ -99,7 +97,7 @@ textarea,
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 footer {
@@ -115,4 +113,38 @@ footer {
   background-color: lightblue;
   flex-direction: column;
   padding: 20px 0;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .content form {
+    row-gap: 20px;
+    width: auto;
+    margin: 0 auto;
+    text-align: start;
+  }
+
+  .text {
+    width: auto;
+  }
+
+  textarea,
+  .wrapper p {
+    font-size: inherit;
+  }
+
+  .wrapper p {
+    width: auto;
+  }
+
+  footer {
+    overflow-wrap: break-word;
+  }
+
+
+
 }

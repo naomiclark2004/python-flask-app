@@ -1,7 +1,7 @@
 ## Welcome
 
 In the project directory run:
-
+    pip install -r requirements.txt
     python app.py
 
 Click on the localhost link to view it in your browser.
